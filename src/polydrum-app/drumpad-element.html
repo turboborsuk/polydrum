@@ -67,7 +67,7 @@
 
         </style>
 
-        <paper-button id="paddy" on-click="saywhat" raised class="key"><audio id="audio"></audio></paper-button>
+        <paper-button id="paddy" on-mousedown="saywhat" raised class="key"><audio id="audio"></audio></paper-button>
         
     </template>
 
@@ -98,6 +98,7 @@
 
             ready() {
                 super.ready();
+                
                 this.$.paddy.innerHTML = "<span class='sound'><kbd>" + this.pad.key + "</kbd>" + this.pad.label + "</span>";
                 this.$.audio.src = this.pad.soundFile;
                 var thisPadId = this.pad.padId;
