@@ -94,8 +94,6 @@
 
             constructor() {
                 super();
-                
-            
             }
 
             ready() {
@@ -103,8 +101,14 @@
                 this.$.paddy.innerHTML = "<span class='sound'><kbd>" + this.pad.key + "</kbd>" + this.pad.label + "</span>";
                 this.$.audio.src = this.pad.soundFile;
                 var thisPadId = this.pad.padId;
-                
-                
+                console.log(thisPadId);
+                window.addEventListener('keydown', sayhuh);
+                function sayhuh(e) {
+                    let key = e.keyCode;
+                    if (key == thisPadId) {
+                    console.log(thisPadId);
+                    }
+        }
                 Polymer.RenderStatus.afterNextRender(this, function() {
                 });
             }
@@ -112,11 +116,7 @@
 
 
         }
-        window.addEventListener('keydown', sayhuh);
-                function sayhuh(e) {
-                    let key = e.keyCode;
-                    console.log(key);
-        }
+
         window.customElements.define(drumpadElement.is, drumpadElement);
     </script>
 </dom-module>
