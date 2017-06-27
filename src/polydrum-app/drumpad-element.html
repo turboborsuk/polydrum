@@ -104,20 +104,19 @@
                 this.$.audio.src = this.pad.soundFile;
                 var thisPadId = this.pad.padId;
                 
-                this.$.paddy.addEventListener('keydown', sayhuh);
-                function sayhuh(e) {
-                    let key = e.keyCode;
-                    console
-                    if (key === thisPadId) {
-                    console.log(key);
-                    }
-                }
+                
                 Polymer.RenderStatus.afterNextRender(this, function() {
                 });
             }
 
-        }
 
+
+        }
+        window.addEventListener('keydown', sayhuh);
+                function sayhuh(e) {
+                    let key = e.keyCode;
+                    console.log(key);
+        }
         window.customElements.define(drumpadElement.is, drumpadElement);
     </script>
 </dom-module>
