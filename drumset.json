@@ -1,0 +1,54 @@
+[{
+	"padId": "65",
+	"key": "A",
+	"label": "clap",
+	"soundFile": "sounds/clap.wav"
+},
+{
+	"padId": "83",
+	"key": "S",
+	"label": "hihat",
+	"soundFile": "sounds/hihat.wav"
+},
+{
+	"padId": "68",
+	"key": "D",
+	"label": "kick",
+	"soundFile": "sounds/kick.wav"
+},
+{
+	"padId": "70",
+	"key": "F",
+	"label": "openhat",
+	"soundFile": "sounds/openhat.wav"
+},
+{
+	"padId": "71",
+	"key": "G",
+	"label": "boom",
+	"soundFile": "sounds/boom.wav"
+},
+{
+	"padId": "72",
+	"key": "H",
+	"label": "ride",
+	"soundFile": "sounds/ride.wav"
+},
+{
+	"padId": "74",
+	"key": "J",
+	"label": "snare",
+	"soundFile": "sounds/snare.wav"
+},
+{
+	"padId": "75",
+	"key": "K",
+	"label": "tom",
+	"soundFile": "sounds/tom.wav"
+},
+{
+	"padId": "76",
+	"key": "L",
+	"label": "tink",
+	"soundFile": "sounds/tink.wav"
+}]

@@ -1,0 +1,7 @@
+{
+  "name": "polydrum",
+  "short_name": "polydrum",
+  "description": "a polymer 2.0 drumset",
+  "start_url": "/",
+  "display": "standalone"
+}

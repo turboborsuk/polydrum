@@ -1,0 +1,123 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+
+<!--
+`<drumpad>` is Description
+
+@element drumpad
+-->
+<dom-module id="drumpad-element">
+    <template>
+        <style>
+            :host {
+                display: inline;
+            }
+
+            html {
+                font-size: 10px;
+
+            }
+            body,html {
+                margin: 0;
+                padding: 0;
+                font-family: sans-serif;
+            }
+
+            .keys {
+                display: flex;
+                flex: 1;
+                min-height: 100vh;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .key {
+                border: .4rem solid black;
+                border-radius: .5rem;
+                margin: 1rem;
+                font-size: 1.5rem;
+                padding: 1rem .5rem;
+                transition: all .07s ease;
+                width: 10rem;
+                text-align: center;
+                color: white;
+                text-shadow: 0 0 .5rem black;
+                    background: url(set.jpg) top center;
+                background-size: cover;
+            
+            }
+
+            .playing {
+                transform: scale(1.1);
+                border-color: #ffc600;
+                box-shadow: 0 0 1rem #ffc600;
+            }
+
+            kbd {
+                display: block;
+                font-size: 4rem;
+            }
+
+            .sound {
+                font-size: 1.2rem;
+                text-transform: uppercase;
+                letter-spacing: .1rem;
+                color: #ffc600;
+            }
+
+        </style>
+
+        <paper-button id="paddy" on-click="saywhat" raised class="key"><audio id="audio"></audio></paper-button>
+        
+    </template>
+
+    <script>
+        
+        
+
+        class drumpadElement extends Polymer.Element {
+            
+            saywhat() {
+                this.$.audio.currentTime = 0;
+                this.$.audio.play();
+            }
+
+
+
+            static get is() { return 'drumpad-element'; }
+
+            static get properties() {
+                return {
+                    pad: Object
+                };
+            }
+
+            constructor() {
+                super();
+                
+            
+            }
+
+            ready() {
+                super.ready();
+                this.$.paddy.innerHTML = "<span class='sound'><kbd>" + this.pad.key + "</kbd>" + this.pad.label + "</span>";
+                this.$.audio.src = this.pad.soundFile;
+                var thisPadId = this.pad.padId;
+                
+                this.$.paddy.addEventListener('keydown', sayhuh);
+                function sayhuh(e) {
+                    let key = e.keyCode;
+                    console
+                    if (key === thisPadId) {
+                    console.log(key);
+                    }
+                }
+                Polymer.RenderStatus.afterNextRender(this, function() {
+                });
+            }
+
+        }
+
+        window.customElements.define(drumpadElement.is, drumpadElement);
+    </script>
+</dom-module>

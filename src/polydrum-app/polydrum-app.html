@@ -1,0 +1,54 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="drumpad-element.html">
+
+<dom-module id="polydrum-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+        background-color: #004080;
+      }
+
+    </style>
+    
+    <iron-ajax
+        auto
+        id="drumset"
+        url="../../drumset.json"
+        handle-as="json"
+        last-response="{{ajaxResponse}}"></iron-ajax>
+
+    <template is="dom-repeat" items="{{ajaxResponse}}">
+      <drumpad-element pad="[[item]]"></drumpad-element>
+    </template>
+
+  </template>
+  
+  <script>
+  
+  
+  </script>
+  
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class PolydrumApp extends Polymer.Element {
+
+      static get is() { return 'polydrum-app'; }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'polydrum-app'
+          }
+        };
+      }
+    }
+
+    window.customElements.define(PolydrumApp.is, PolydrumApp);
+  </script>
+</dom-module>
