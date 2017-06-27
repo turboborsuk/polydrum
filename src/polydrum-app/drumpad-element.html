@@ -101,12 +101,13 @@
                 this.$.paddy.innerHTML = "<span class='sound'><kbd>" + this.pad.key + "</kbd>" + this.pad.label + "</span>";
                 this.$.audio.src = this.pad.soundFile;
                 var thisPadId = this.pad.padId;
-                console.log(thisPadId);
+                var thisAudio = this.$.audio;
                 window.addEventListener('keydown', sayhuh);
                 function sayhuh(e) {
                     let key = e.keyCode;
                     if (key == thisPadId) {
-                    console.log(thisPadId);
+                        thisAudio.currentTime = 0;
+                        thisAudio.play();
                     }
         }
                 Polymer.RenderStatus.afterNextRender(this, function() {
