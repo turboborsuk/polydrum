@@ -82,8 +82,6 @@
                 this.$.audio.play();
             }
 
-
-
             static get is() { return 'drumpad-element'; }
 
             static get properties() {
@@ -110,13 +108,10 @@
                         thisAudio.currentTime = 0;
                         thisAudio.play();
                     }
-        }
+                }
                 Polymer.RenderStatus.afterNextRender(this, function() {
                 });
             }
-
-
-
         }
 
         window.customElements.define(drumpadElement.is, drumpadElement);
